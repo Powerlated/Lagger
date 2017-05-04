@@ -21,7 +21,6 @@ public class Lagger {
                     e.printStackTrace();
                 }
                 while (true) {
-                    System.out.println("YOLO FROM " + Thread.currentThread().getName().toUpperCase());
                 }
             }).start();
             counter++;
