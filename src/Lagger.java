@@ -13,14 +13,17 @@ public class Lagger {
         }
         int counter = 0;
         while (counter != threads) {
-            new Thread(new Runnable(){
-                @Override
-                public void run() {
-                    while (true) {
-                        System.out.println("YOLO FROM " + Thread.currentThread().getName().toUpperCase());
-                    }
+            new Thread(() -> {
+                System.out.println("Starting lagger for thread " + Thread.currentThread().getName() + " in 5 seconds.");
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-            });
+                while (true) {
+                    System.out.println("YOLO FROM " + Thread.currentThread().getName().toUpperCase());
+                }
+            }).start();
         }
     }
 }
