@@ -24,6 +24,7 @@ public class Lagger {
                     System.out.println("YOLO FROM " + Thread.currentThread().getName().toUpperCase());
                 }
             }).start();
+            counter++;
         }
     }
 }
